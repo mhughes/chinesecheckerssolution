@@ -1,16 +1,11 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
+namespace Game;
 /**
  * Description of Node
  *
  * @author tute666
  */
-class Nextive_Board_Node {
+class Node {
     const STATE_FULL = 1;
     const STATE_EMPTY = 0;
     private $n,$e,$s,$w;
@@ -20,6 +15,8 @@ class Nextive_Board_Node {
         $this->s = $s;
         $this->w = $w;
     }
+	public function jumpTo($direction){
+	}
 }
 
 ?>
