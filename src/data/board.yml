@@ -1,0 +1,14 @@
+## YAML Template.
+---
+Nodes:
+  c1:
+    s:c2
+    e:d1
+  d1:
+    w:e1
+    s:d2
+    e:e1
+  e1:
+    w: d1
+    s: d2
+    
