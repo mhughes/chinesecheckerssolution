@@ -1,14 +1,7 @@
 ## YAML Template.
----
+##nesw
 Nodes:
-  c1:
-    s:c2
-    e:d1
-  d1:
-    w:e1
-    s:d2
-    e:e1
-  e1:
-    w: d1
-    s: d2
-    
+  c1: [null, d1, c2, null]
+  d1: [null, e1, d2, e1]
+  e1: [null, null, d2, d1]
+  a3: [null, b3, a4, null]

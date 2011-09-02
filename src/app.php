@@ -1,7 +1,8 @@
 <?php
-
-if($argv[0] != "app.php"){
-	echo "Wrong Usage";
+if(substr($argv[0], -7) != "app.php"){
+	echo "Wrong Usage. Must be called from CLI.";
+	
+	exit;
 }
 include "config.php";
 
