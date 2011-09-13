@@ -16,5 +16,3 @@ interface IBoard {
 	 */
 	public function isResolved();
 }
-
-?>

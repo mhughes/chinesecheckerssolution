@@ -71,5 +71,3 @@ class Board implements IBoard{
 	}
 
 }
-
-?>
