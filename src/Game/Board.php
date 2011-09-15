@@ -6,20 +6,8 @@ namespace Game;
  *
  * @author tute666
  */
-class Board implements IBoard{
+class Board implements IBoard {
 
-//	private $nodes = array();
-//	private $current;
-//
-//	public static function newFromFile($path) {
-//		$nodes = parse_ini_file($path);
-//		$board = new Board($nodes);
-//		return $board;
-//	}
-//
-//	public function __construct($nodes = array()) {
-//		$this->nodes = $nodes;
-//	}
 	private $board = array();
 
 	public function __construct() {
@@ -33,6 +21,10 @@ class Board implements IBoard{
 		$this->board = $boardRows;
 	}
 
+	/**
+	 * Prints Board state
+	 * @return string 
+	 */
 	public function __toString() {
 		$output = "";
 		foreach ($this->board as $row => $values) {
@@ -51,23 +43,29 @@ class Board implements IBoard{
 		return $output;
 	}
 
-	public function move($from, $to) {
-		if($this->isValidMove($from, $to)){
-			$this->doMove($from, $to);
-		}else{
+	public function move(IMove $move) {
+		if ($move->isValid($this)) {
+			$this->doMove($move);
+		} else {
 			throw new \InvalidMoveException();
 		}
 	}
-	
-	private function doMove($from, $to){
-		$this->board[$from[1]][$from[0]] = 0;
-		$this->board[$to[1]][$to[0]] = 1;
+
+	private function doMove(IMove $move) {
+		$from = $move->getFrom();
+		$to = $move->getTo();
+		$middle = $move->getMiddle();
+		$this->board[$from[0]][$from[1]] = 0;
+		$this->board[$middle[0]][$middle[1]] = 0;
+		$this->board[$to[0]][$to[1]] = 1;
 	}
-	private function isValidMove($from, $to){
-		
-	}
-	public function isResolved(){
+
+	public function isResolved() {
 		return false;
+	}
+
+	public function hasPegAt($point) {
+		return $this->board[$point[0]][$point[1]]===1;
 	}
 
 }

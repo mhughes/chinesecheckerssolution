@@ -6,7 +6,9 @@ if(substr($argv[0], -7) != "app.php"){
 }
 include "config.php";
 
-$board = Game\Board::newFromFile(__DIR__."../data/board.ini");
+$board = new Game\Board();
+
+echo $board;
 
 $solver = new Solution\Classic($board);
 

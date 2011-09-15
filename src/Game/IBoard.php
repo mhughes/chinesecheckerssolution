@@ -10,9 +10,13 @@ interface IBoard {
 	 * @return bool
 	 * @throws InvalidMoveException
 	 */
-	public function move($to, $from);
+	public function move(IMove $move);
 	/**
 	 * @return bool;
 	 */
 	public function isResolved();
+	/**
+	 * @return bool
+	 */
+	public function hasPegAt($point);
 }

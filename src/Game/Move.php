@@ -1,7 +1,9 @@
 <?php
 namespace Game;
 /**
- * Description of Move
+ * Move is coupled to the board implementation
+ * TODO: reflect this
+ * maybe by defining the point implementation as a1,b2 we mitigate this.
  *
  * @author tute666
  */
@@ -18,5 +20,17 @@ class Move extends IMove{
 	}
 	public function getTo(){
 		return $this->to;
+	}
+	/**
+	 * calculates middle peg between to and from
+	 */
+	public function getMiddle(){
+		return ;
+	}
+	public function isValid(IBoard $board){
+		return 
+		$board->hasPegAt($this->getFrom()) &&
+		!$board->hasPegAt($this->getTo()) &&
+		$board->hasPegAt($this->getMiddle());
 	}
 }
