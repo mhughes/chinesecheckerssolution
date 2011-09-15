@@ -1,1 +1,3 @@
-Chinese Checkers Solution in PHP
+Peg Solitaire Solver in PHP
+
+The purpose of the proyect is a peg solitaire solver, with pluggable solvers and board implementations.
